@@ -89,6 +89,10 @@ Una vez iniciado el servidor, acceder a:
 
 ---
 
+## Captura de la API
+
+![Swagger](assets/swagger.png)
+
 ## Ejemplos de uso
 
 ### Obtener productos con filtros
