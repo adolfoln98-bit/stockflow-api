@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from routes.productos import router as productos_router
-from db import init_db, seed_data
+from app.routes.productos import router as productos_router
+from app.db import init_db, seed_data
 
 
 
