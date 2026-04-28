@@ -1,5 +1,5 @@
-from db import conn
-from schemas import Producto
+from app.db import conn
+from app.schemas import Producto
 
 
 
