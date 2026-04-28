@@ -1,6 +1,6 @@
 import sqlite3
 
-DB_PATH = "data/productos.db"
+DB_PATH = "app/data/productos.db"
 
 def conn():
     conexion = sqlite3.connect(DB_PATH)
