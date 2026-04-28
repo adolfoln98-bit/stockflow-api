@@ -46,7 +46,7 @@ def buscar_producto(
 
 
 @router.get("/{id}", response_model=ProductoOut)
-def buscar_producto_id(id: int):
+def obtener_producto_id(id: int):
     producto = buscar_producto_id(id)
 
     if producto is None:
