@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import Literal
 
-from services.productos_service import (
+from app.services.productos_service import (
     listar_productos,
     buscar_producto_id,
     crear_nuevo_producto_db,
@@ -9,14 +9,14 @@ from services.productos_service import (
     borrar_producto_db
     )
 
-from schemas import Producto, ProductoOut, ProductosResponse
+from app.schemas import Producto, ProductoOut, ProductosResponse
 
 
 
 router = APIRouter()
 
 @router.get("", response_model=ProductosResponse)
-def buscar_cliente(
+def buscar_producto(
                 nombre: str | None = None,
                 categoria: str | None = None,
                 precio_min: float | None = Query(None, ge=0),
@@ -56,7 +56,7 @@ def buscar_producto_id(id: int):
 
 
 @router.post("", status_code=201, response_model=ProductoOut)
-def crear_cliente(producto: Producto):
+def crear_producto(producto: Producto):
     nuevo_producto = crear_nuevo_producto_db(producto)
 
     if nuevo_producto is None:
@@ -66,7 +66,7 @@ def crear_cliente(producto: Producto):
         
        
 @router.put("/{id}", response_model=ProductoOut)
-def actualizar_cliente(id: int, producto: Producto):  
+def actualizar_producto(id: int, producto: Producto):  
     producto_actualizado = actualizar_producto_db(id, producto)  
 
     if producto_actualizado is None:
